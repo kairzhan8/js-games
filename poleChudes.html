@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Pole Chudes</title>
+</head>
+<body>
+<script>
+	let words = ['футбол', 'жизнь', 'наслаждение', 'картина', 'вода', 'дверь', 'девушка', 'знакомства', 'работа', 'юрта', 'монитор', 'сумка', 'наушники', 'мотивация'];
+	let currentWord = words[Math.floor(Math.random() * words.length)];
+	let answerArray = [];
+	for (let i = 0; i < currentWord.length; i++) {
+		answerArray[i] = '_'; 
+	}
+	console.log(answerArray);
+	let remainningLetters = currentWord.length;
+	let guesses = 15;
+	while(remainningLetters > 0 && guesses > 0) {
+		alert(answerArray.join(' '));
+		let guess = prompt('Угадайте букву(15 попыток) или нажмите Отмена для выходя из игры!');
+		if (guess === null) {
+			break;
+			window.close();
+		} else if (guess.length > 1) {
+			alert('Введите одну букву');
+		} else {
+			guesses--;
+			guess = guess.toLowerCase();
+			for (let j = 0; j < currentWord.length; j++) {
+				if (currentWord[j] === guess && answerArray[j] === '_') {
+					answerArray[j] = guess;
+					remainningLetters--;
+				}
+			}
+		}
+	}
+	alert(answerArray.join(' '));
+	if (guesses > 0) {
+      alert("Отлично! Было загадано слово " + currrentWord);
+    } else {
+      alert("Очень плохо! Было загадано слово " + currentWord);
+    }
+
+</script>
+</body>
+</html>

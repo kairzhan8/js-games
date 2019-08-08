@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Trolling is funny!</title>
+</head>
+<body>
+	<button onclick="haha()">Click me, Bitch!</button>
+
+</body>
+<script type="text/javascript">
+	var haha = function() {
+	var friends = ['Abo', 'Askar', 'Madi', 'Akyl', 'Dakha', 'Make', 'Aza', 'Batyr','Max','Kaba'];
+	var adjectives = ['grebanyi', 'zloi', 'poslednii', 'lytchi', 'dobryi'];
+	var trolls= ['drug', 'chelovek', 'chert', 'pidr', 'proger', 'futbolist', 'shutnik'];
+	var friend = friends[Math.floor(Math.random() * 10)];
+	var adjective = adjectives[Math.floor(Math.random() * 5)];
+	var troll = trolls[Math.floor(Math.random() * 7)];
+	var press = friend + ' ' + adjective + ' ' + troll + '!';
+	var troll = function() {
+		alert(press);
+	};
+	var presss = function() {
+		return troll();
+		location.reload();
+	};
+	return presss();
+};
+</script>
+</html>
